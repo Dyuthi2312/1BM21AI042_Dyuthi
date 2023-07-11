@@ -1,9 +1,10 @@
-#include<iostream.h>
+#include<iostream>
 using namespace std;
 class sorting
 {
 private:
-    int a[100], int n;
+    int n;
+    int a[100];
 public:
     void input();
     void selection();
@@ -13,8 +14,9 @@ public:
 void sorting::input()
 {
     int i=0;
-    cout<<"enter the number of elements";
+    cout<<"enter the number of elements \n";
     cin>>n;
+    cout<<"enter the elements\n";
     for(i=0;i<n;i++)
     {
         cin>>a[i];
@@ -22,7 +24,7 @@ void sorting::input()
 }
 void sorting::selection()
 {
-    cout<<"selection sort";
+    cout<<"selection sort\n";
     int i, j, min, temp;
     for (i = 0; i < n - 1; i++)
         {
@@ -42,7 +44,7 @@ void sorting::selection()
 }
 void sorting::bubble()
 {
-    cout<<"bubble sort";
+    cout<<"bubble sort\n";
       int i, j, temp;
     bool swapped;
     for (i = 0; i < n - 1; i++)
@@ -51,8 +53,8 @@ void sorting::bubble()
         for (j = 0; j < n - i - 1; j++) {
             if (a[j] > a[j + 1]) {
                temp=a[j+1];
-    a[j+1]=a[j];
-    a[j]=a[j+1];
+               a[j+1]=a[j];
+               a[j]=temp;
                 swapped = true;
             }
         }
@@ -63,11 +65,12 @@ void sorting::bubble()
 void sorting::output()
 {
     int i;
-    cout<<"sorted array is";
+    cout<<"sorted array is ";
     for(i=0;i<n;i++)
-        cout<<a[i];
+        cout<<a[i]<<" ";
+    cout<<"\n";
 }
-void main()
+int main()
 {
     sorting obj1, obj2;
     obj1.input();
